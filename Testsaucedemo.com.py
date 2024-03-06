@@ -33,7 +33,6 @@ driver.find_element('xpath', "//input[@class='submit-button btn_action']").click
 
 act_title=driver.title
 exp_title="Swag Labs"
-
 if act_title==exp_title:
     print('Login test Successful')
 else:
@@ -51,7 +50,6 @@ driver.find_element('xpath', "//button[@id='finish']").click()
 
 act_title=driver.title
 exp_title="Swag Labs"
-
 if act_title==exp_title:
     print('Purchase test Successful')
 else:
@@ -64,7 +62,6 @@ driver.find_element('css selector', "#logout_sidebar_link").click()
 
 act_title=driver.title
 exp_title="Swag Labs"
-
 if act_title==exp_title:
     print('Logout test Successful')
 else:
