@@ -131,26 +131,5 @@ if actual_title == expected_title:
 else:
     print('Flights search test Failed')
 
-# # # Scrolling down the window
-# time.sleep(5)
-# driver.execute_script("window.scrollTo(0, window.scrollY + 150)")
-#
-# time.sleep(5)
-# # Select radio button
-# flightstops = ".oneway_1"
-# radio_list = driver.find_elements(By.NAME, "type")
-#
-# for rbtn in radio_list:
-#     rbtn_attr = rbtn.get_attribute("value")
-#     print(rbtn_attr)
-#     if rbtn_attr == flightstops:
-#         if rbtn.is_selected():
-#             print("The radio button is already selected")
-#         else:
-#             rbtn.click()
-#             print("The radio button is selected")
-#         break
-
-
 
 driver.close()
