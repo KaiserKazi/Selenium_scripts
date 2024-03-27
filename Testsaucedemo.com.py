@@ -12,16 +12,28 @@
 # 10. Verify user is logged out successfully
 
 
+import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-#Webdriver script for Edge
-# from selenium.webdriver.edge.options import Options
-# options = Options()
-# options.add_experimental_option("detach", True)
-# driver = webdriver.Edge(options=options)
+browser = "chrome"  # chrome, firefox, edge
+driver = ''
+flightType = "oneway"  # oneway, return
 
-#Webdriver script for Firefox
-driver = webdriver.Firefox()
+if browser == "chrome":
+    from selenium.webdriver.chrome.options import Options
+    options = Options()
+    options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome(options=options)
+elif browser == "firefox":
+    driver = webdriver.Firefox()
+elif browser == "edge":
+    from selenium.webdriver.edge.options import Options
+    options = Options()
+    options.add_experimental_option("detach", True)
+    driver = webdriver.Edge(options=options)
+else:
+    driver = webdriver.Chrome()
 
 driver.get('https://www.saucedemo.com/')
 driver.maximize_window()
