@@ -28,22 +28,24 @@
 # 21. Click on Logout
 # 22. Verify successfully logout.
 
+
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-#from selenium.webdriver.edge.options import Options
-import time
 
 browser = "chrome"  # chrome, firefox, edge
 driver = ''
+flightType = "oneway"  # oneway, return
 
 if browser == "chrome":
+    from selenium.webdriver.chrome.options import Options
     options = Options()
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
 elif browser == "firefox":
     driver = webdriver.Firefox()
 elif browser == "edge":
+    from selenium.webdriver.edge.options import Options
     options = Options()
     options.add_experimental_option("detach", True)
     driver = webdriver.Edge(options=options)
