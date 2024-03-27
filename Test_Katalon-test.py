@@ -16,20 +16,20 @@
 
 import time
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-#from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 
 browser = "chrome"  # chrome, firefox, edge
 driver = ''
 Gender = "Male" # Male, Female, In Between
 if browser == "chrome":
+    from selenium.webdriver.chrome.options import Options
     options = Options()
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
 elif browser == "firefox":
     driver = webdriver.Firefox()
 elif browser == "edge":
+    from selenium.webdriver.edge.options import Options
     options = Options()
     options.add_experimental_option("detach", True)
     driver = webdriver.Edge(options=options)
